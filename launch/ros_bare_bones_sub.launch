@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="nodelet_manager" default="ros_bare_bones_sub_manager"/>
+    <arg name="points_topic" default="/os_cloud_node/points"/>
+
+    <node pkg="nodelet" type="nodelet" name="sub_standalone_nodelet" args="manager" output="screen"
+          respawn="true"/>
+
+    <node pkg="nodelet" type="nodelet" name="ros_bare_bones_sub"
+          args="load ros_bare_bones_sub/ROSBareBonesSubNodelet sub_standalone_nodelet"
+          respawn="true">
+
+    </node>
+
+</launch>
+
