@@ -24,5 +24,5 @@ RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 WORKDIR /
 ENTRYPOINT ["/ros_entrypoint.sh"]
-
-CMD ["roslaunch", "ros_bare_bones_sub", "ros_bare_bones_sub.launch"]
+WORKDIR $CATKIN_WS/src/rosbarebones
+CMD ["./run.sh"]
